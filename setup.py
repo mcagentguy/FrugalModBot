@@ -2,7 +2,13 @@ import praw
 from util import log
 
 from config import CLIENT_ID, USER_AGENT, REDDIT_USERNAME
-from credentials import CLIENT_SECRET, REDDIT_PASSWORD
+
+try:
+    from credentials import CLIENT_SECRET, REDDIT_PASSWORD
+except ImportError:
+    log("NOTICE: The 'credentials.py' file is missing.", is_error=True)
+    log("Please create the 'credentials.py' file with the required variables CLIENT_SECRET and REDDIT_PASSWORD.", is_error=True)
+    exit(1)
 
 def login() -> None:
     try:
