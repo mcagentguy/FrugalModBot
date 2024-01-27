@@ -9,6 +9,9 @@ from util import log
 from modactions import remove_post
 from config import REDDIT_USERNAME, TARGET_SUBREDDIT
 
+# FrugalModBot reddit bot for /r/frugal
+# Author: /u/mcagent
+
 def main():
     # Configure the logging module
     logging.basicConfig(level = logging.INFO, filename = 'FrugalModBot.log')
