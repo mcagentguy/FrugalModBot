@@ -4,7 +4,10 @@
 
 ## Introduction
 
-This is a Reddit bot powered by PRAW (Python Reddit API Wrapper). The bot performs mod actions on the /r/frugal subreddit.
+This is a Reddit bot powered by PRAW (Python Reddit API Wrapper). The bot performs mod actions on the /r/frugal subreddit, such as the following:
+
+- removes image/link posts that don't contain a lengthy enough description
+- removes posts with the Frugal Finds Friday flair when the current day is not Friday
 
 ## Dependencies
 
