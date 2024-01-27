@@ -10,6 +10,8 @@
 
 # Reddit apps require a client ID and client secret.
 
+''' PRAW setup '''
+
 # Tells reddit.com which app is making the request
 CLIENT_ID = 'GouOLoJd3E3is2fdIU3ANQ'
 
@@ -20,10 +22,10 @@ USER_AGENT = 'FrugalModBot'
 # reddit account. Do not include the u/. Example: "mcagent" or "FrugalModBot"
 REDDIT_USERNAME = 'FrugalModBot'
 
-# Secrets & passwords are stored in credentials.py.
-
 # Subreddit to run on. Do not include the r/. Examples: "Frugal" or "FrugalTest"
 TARGET_SUBREDDIT = 'Frugal'
+
+''' Configuarations '''
 
 # These are extensions the bot looks for in self posts. If one of these is found,
 # the post will be treated as a link post.
@@ -36,4 +38,12 @@ COMMENT_CHARACTER_MINIMUM = 150
 POST_CHARACTER_MINIMUM = 150
 
 # This value is in minutes. If you want 30 minutes, put 30 here. If you want 2 hours, put 120 here.
-POST_AGE_BEFORE_BOT_CHECKS_COMMENTS = 30
+POST_AGE_BEFORE_BOT_CHECKS_COMMENTS = 8
+
+# These are the debug messages that show up in both the FrugalModBot.log file and the terminal.
+ENABLE_DEBUG_MESSAGES = False
+
+# Set to True and the bot will remove posts. Set to false and the bot will simply log violations instead.
+REMOVE_POSTS = True
+
+# Secrets & passwords are stored in credentials.py.
