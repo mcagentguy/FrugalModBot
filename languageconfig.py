@@ -14,9 +14,6 @@ SHORT_COMMENT_REPORT_REASON = "OP left a short comment on an image post. Please 
 SHORT_POST_REPORT_REASON = "Image post without"
 
 def FOLLOW_UP_OR_POORLY_DESCRIPTIVE_POST_REASON(post: praw.models.Submission) -> str:
-    """
-    post: praw.models.Submission
-    """
     return (f"Hi {post.author}, thanks for contributing. However, your [submission]({post.permalink}) was removed from /r/{config.TARGET_SUBREDDIT}.\n"
             f"\nWe are removing your post/comment because the content needs a follow-up comment or is poorly descriptive. This usually happens because: \n"
             f"\n- You created an image post but did not accompany it with a relevant top-level comment. \n"

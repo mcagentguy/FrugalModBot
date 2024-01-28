@@ -37,6 +37,15 @@ COMMENT_CHARACTER_MINIMUM = 150
 # The length a self post (with an image extension) must be to prevent a report.
 POST_CHARACTER_MINIMUM = 150
 
+# The length a title must be to avoid a report.
+POST_TITLE_CHARACTER_MINIMUM = 150
+
+# When the remove a post due to comment size (if title and body are also too short)
+COMMENT_LENGTH_REMOVAL = 80
+
+# When to remove a post due to title length (if comment and body are also too short)
+TITLE_LENGTH_REMOVAL = 80
+
 # This value is in minutes. If you want 30 minutes, put 30 here. If you want 2 hours, put 120 here.
 POST_AGE_BEFORE_BOT_CHECKS_COMMENTS = 8
 

@@ -60,8 +60,8 @@ def monitor_image_post(post: praw.models.Submission) -> None:
         debug(f'{post.id} - Post is not sufficiently old. Leaving monitor_image_posts().')
         return
     # Post title is sufficiently large.
-    if len(post.title) >= 110:
-        debug(f'{post.id} - Post title is >= 110. Leaving monitor_image_posts().')
+    if len(post.title) >= config.POST_TITLE_CHARACTER_MINIMUM:
+        debug(f'{post.id} - Post title is >= 150. Leaving monitor_image_posts().')
         return
     # If it's a self post and they included a long enough post body, do nothing
     if post.is_self and len(post.body) >= config.POST_CHARACTER_MINIMUM:
@@ -74,16 +74,18 @@ def monitor_image_post(post: praw.models.Submission) -> None:
     
     # Remove the post if there's no comment of sufficient size and a short title. Otherwise, report the post.
     if author_comment is None:
-        if title_size < 80 or (post.is_self and len(post.body) < 100):
+        if title_size < config.TITLE_LENGTH_REMOVAL or (post.is_self and len(post.body) < 100):
             remove_post(post, lang.FOLLOW_UP_OR_POORLY_DESCRIPTIVE_POST_REASON(post))
-        elif title_size < 120 or ((post.is_self and len(post.body) < 150)):
+        elif title_size < config.POST_TITLE_CHARACTER_MINIMUM or ((post.is_self and len(post.body) < 150)):
+            debug(f'Reported post {post.id} for insufficient title or body length.')
             post.report(lang.SHORT_POST_REPORT_REASON)
     else:
         comment_size = len(author_comment.body)
 
-        if comment_size < 100:
+        if comment_size < config.COMMENT_LENGTH_REMOVAL:
             remove_post(post, lang.FOLLOW_UP_OR_POORLY_DESCRIPTIVE_POST_REASON(post))
-        elif comment_size < 150:
+        elif comment_size < config.COMMENT_CHARACTER_MINIMUM:
+            debug(f'Reported post {post.id} for insufficient title or body length.')
             author_comment.report(lang.SHORT_COMMENT_REPORT_REASON)
 
 if __name__ == "__main__":
