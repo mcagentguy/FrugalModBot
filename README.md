@@ -9,6 +9,8 @@ This is a Reddit bot powered by PRAW (Python Reddit API Wrapper). The bot perfor
 - removes image/link posts that don't contain a lengthy enough description
 - removes posts with the Frugal Finds Friday flair when the current day is not Friday
 
+At the time of this writing, this bot runs on https://www.reddit.com/user/FrugalModBot
+
 ## Dependencies
 
 This bot runs on the following dependencies:
