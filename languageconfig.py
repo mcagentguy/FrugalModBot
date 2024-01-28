@@ -13,7 +13,7 @@ SHORT_COMMENT_REPORT_REASON = "OP left a short comment on an image post. Please 
 # This is the report reason when an OP creates a self post with an image without a long enough description.
 SHORT_POST_REPORT_REASON = "Image post without"
 
-def FOLLOW_UP_OR_POORLY_DESCRIPTIVE_POST_REASON(post: praw.models.Comment) -> str:
+def FOLLOW_UP_OR_POORLY_DESCRIPTIVE_POST_REASON(post: praw.models.Submission) -> str:
     """
     post: praw.models.Submission
     """

@@ -7,10 +7,8 @@ from datetime import datetime
 
 def log(aStringToLog: str, is_error: bool = False) -> None:
     if is_error:
-        print('ERROR: ' + aStringToLog)
         logging.error(time.strftime("%Y/%m/%d %H:%M:%S ") + aStringToLog)
     else:
-        print(aStringToLog)
         logging.info(time.strftime("%Y/%m/%d %H:%M:%S ") + aStringToLog)
 
 def debug(message: str) -> None:
