@@ -23,6 +23,7 @@ For setup instructions, see PRAW's Quick Start documentation: https://praw.readt
 NOTE: You must create the credentials.py file within the directory of the app and populate it with the below two variables. (Or simply edit these variables directly within setup.py, but be careful not to share your secrets online)
 
 CLIENT_SECRET = 'your_client_secret'
+
 REDDIT_PASSWORD = 'your_reddit_account_password'
 
 ## Help
